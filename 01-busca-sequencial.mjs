@@ -34,5 +34,30 @@ console.log('------------------------------------------------------------------'
 
 import { nomes } from './data/vetor-nomes.mjs'
 
+console.time('Buscando BRUNO...') // Dispara a contagem de tempo
 console.log('Posição de BRUNO:', buscaSequencial(nomes, 'BRUNO'))
+console.timeEnd('Buscando BRUNO...') // Para a contagem de tempo 
 
+console.log('------------------------------------------------------------------')
+
+console.time('Buscando JURANDIR...') // Dispara a contagem de tempo
+console.log('Posição de JURANDIR:', buscaSequencial(nomes, 'JURANDIR'))
+console.timeEnd('Buscando JURANDIR...') // Para a contagem de tempo
+
+console.log('------------------------------------------------------------------')
+
+console.time('Buscando VERONICA...') // Dispara a contagem de tempo
+console.log('Posição de VERONICA:', buscaSequencial(nomes, 'VERONICA'))
+console.timeEnd('Buscando VERONICA...') // Para a contagem de tempo
+
+console.log('------------------------------------------------------------------')
+
+console.time('Buscando BERNARDO...') // Dispara a contagem de tempo
+console.log('Posição de BERNARDO:', buscaSequencial(nomes, 'BERNARDO'))
+console.timeEnd('Buscando BERNARDO...') // Para a contagem de tempo
+
+console.log('------------------------------------------------------------------')
+
+console.time('Buscando ORKUTILSON...') // Dispara a contagem de tempo
+console.log('Posição de ORKUTILSON:', buscaSequencial(nomes, 'ORKUTILSON'))
+console.timeEnd('Buscando ORKUTILSON...') // Para a contagem de tempo

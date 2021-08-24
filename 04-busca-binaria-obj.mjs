@@ -1,6 +1,6 @@
 let comps 
 
-function buscaBinaria(vetor, valorBusca, fnComp) {
+function buscaBinaria(vetor, fnComp) {
     comps = 0
     let ini = 0
     let fim = vetor.length - 1
@@ -13,11 +13,14 @@ function buscaBinaria(vetor, valorBusca, fnComp) {
 
         switch(fnComp(vetor[meio])) {
             case 0:    // Encontrado o valor de busca
+                comps++
                 return meio
             case 1:    // Valor busca > valor do meio do vetor
+               comps += 2
                ini = meio + 1
                break
             default:   // -1, valor de busca < valor do meio do vetor
+                comps += 2
                 fim = meio - 1
         }
 
@@ -48,4 +51,18 @@ function comparar(valorMeio, valorBusca = 'FAUSTO') {
     else if(valorBusca > valorMeio.first_name) return 1
     else return -1
 }
+
+import { objNomes } from './data/vetor-obj-nomes.mjs'
+
+console.log('Posição de first_name === FAUSTO', buscaBinaria(objNomes, comparar))
+console.log('Comparações:', comps)
+
+console.log('Posição de first_name === ULISSES', buscaBinaria(objNomes, 
+    (valorMeio, valorBusca = 'ULISSES') => {
+        if(valorBusca === valorMeio.first_name) return 0        
+        else if (valorBusca > valorMeio.first_name) return 1        
+        else return -1    
+    }
+))
+console.log('Comparações:', comps)
 
